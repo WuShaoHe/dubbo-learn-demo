@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+
+    compile project(":dubbo-server:server-api")
+    
+    compile("org.springframework.boot:spring-boot:$springBootVersion")
+    
+    //zookeeper
+    compile("org.apache.zookeeper:zookeeper:3.4.14")
+
+    testCompile("junit:junit:$springBootVersion")
+
+    compile 'com.alibaba:dubbo:2.5.6'
+
+    compile 'com.101tec:zkclient:0.10'
+
+    compile 'com.caucho:hessian:4.0.38'
+
+    compile 'javax.servlet:servlet-api:3.0.1'
+
+    compile 'org.mortbay.jetty:jetty:6.1.26'
+
+    //curator
+//    compile("org.apache.curator:curator-framework:4.0.0")
+//    compile("org.apache.curator:curator-recipes:4.0.0")
+
+    //fastjson
+    compile("com.alibaba:fastjson:$fastjsonVersion")
+
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
