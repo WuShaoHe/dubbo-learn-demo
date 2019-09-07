@@ -1,7 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 
-
 dependencies {
     
     compile project(":dubbo-server:server-api")
@@ -13,15 +12,15 @@ dependencies {
 
     testCompile("junit:junit:$springBootVersion")
 
-    compile 'com.alibaba:dubbo:2.5.6'
+    compile("com.alibaba:dubbo:2.5.6")
 
-    compile 'com.101tec:zkclient:0.10'
+    compile("com.101tec:zkclient:0.10")
 
-    compile 'com.caucho:hessian:4.0.38'
+    compile("com.caucho:hessian:4.0.38")
 
-    compile 'javax.servlet:servlet-api:3.0.1'
+    compile("javax.servlet:servlet-api:3.0.1")
 
-    compile 'org.mortbay.jetty:jetty:6.1.26'
+    compile("org.mortbay.jetty:jetty:6.1.26")
     
 }
 

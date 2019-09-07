@@ -1,7 +1,8 @@
 package vip.wush.dubbo.client;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import vip.wush.dubbo.server.api.IWUHello;
+import vip.wush.dubbo.server.api.HessianProtocolService;
+import vip.wush.dubbo.server.api.model.Person;
 
 /**
  * @ClassName: APP
@@ -19,11 +20,13 @@ public class APP {
 
         context.start();
 
-        IWUHello demoService = (IWUHello)context.getBean("demoService"); // 获取远程服务代理
-
+        HessianProtocolService demoService = (HessianProtocolService)context.getBean("demoService"); // 获取远程服务代理
 
         String hello = demoService.sayHello("wush"); //执行远程方法
-        System.out.println( hello ); // 显示调用结果
+        System.out.println( hello );        // 显示调用结果
+
+        Person person = demoService.getPersonInfo();
+        System.out.println(person.toString());
 
     }
 }
